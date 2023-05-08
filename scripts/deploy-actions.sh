@@ -6,7 +6,8 @@ rscript=$(cat <<EOF
 install.packages("knitr", repos="https://cran.r-project.org");
 library(knitr);
 
-m <- read.dcf("src/contrib/PACKAGES");
+if(file.exists("src/contrib/PACKAGES")) {
+   m <- read.dcf("src/contrib/PACKAGES");
 if( nrow(m) > 1 ) {
         m <- m[order(m[, "Package"], numeric_version(m[, "Version"])), ];
         m <- m[cumsum(table(m[, "Package"])),];
@@ -50,7 +51,8 @@ cat("\n## Source Packages\n", sep="\n");
 cat(paste(srcTable), sep="\n");
 cat("\n## Binary Packages\n", sep="\n");
 cat(paste(binTable), sep="\n");
-sink();
+sink(); 
+}
 EOF
 )
 
