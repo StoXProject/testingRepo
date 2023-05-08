@@ -1,1 +1,0 @@
-# Stox Project Repository
