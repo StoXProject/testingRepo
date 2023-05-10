@@ -3,55 +3,53 @@
 set -o errexit -o nounset
 
 rscript=$(cat <<EOF
+# This script builds the README file:
 install.packages("knitr", repos="https://cran.r-project.org");
 library(knitr);
 
 if(file.exists("src/contrib/PACKAGES")) {
-   m <- read.dcf("src/contrib/PACKAGES");
-if( nrow(m) > 1 ) {
+  m <- read.dcf("src/contrib/PACKAGES", all = TRUE);
+  if( nrow(m) > 1 ) {
+    m <- m[order(m[, "Package"], numeric_version(m[, "Version"])), ];
+    m <- m[cumsum(table(m[, "Package"])),];
+  };
+  
+  srcTable <- knitr::kable(m[,c("Package","Version")]);
+  
+  f1 <- function(pkgfilename) {
+    tmp <- unlist(strsplit(pkgfilename, "/"));
+    ver <- head(tail(tmp, 2), 1);
+    os <- tail(head(tmp, 2), 1);
+
+    m <- read.dcf(pkgfilename, all = TRUE);
+    if( nrow(m) > 1 ) {
         m <- m[order(m[, "Package"], numeric_version(m[, "Version"])), ];
         m <- m[cumsum(table(m[, "Package"])),];
-};
+    };
+    
+    m <- cbind(m, RVer=ver, OS=os);
+    
+    return(m[,c("Package", "RVer", "OS", "Version")]);
+  };
 
-srcTable <- knitr::kable(m[,c("Package","Version")]);
+  pkgfiles <- list.files("bin", pattern="PACKAGES$", recursive = T, full.names = T);
 
+  listpkg <- lapply(pkgfiles, f1);
+  tbl <- as.data.frame(do.call(rbind, listpkg));
+  tbl <- unique(tbl[order(tbl\$Package, tbl\$RVer, tbl\$OS),]);
 
-f1 <- function(pkgfilename) {
-        tmp <- unlist(strsplit(pkgfilename, "/"));
-        ver <- head(tail(tmp, 2), 1);
-        os <- tail(head(tmp, 2), 1);
-
-        m <- read.dcf(pkgfilename, all = TRUE);
-        if( nrow(m) > 1 ) {
-            m <- m[order(m[, "Package"], numeric_version(m[, "Version"])), ];
-            m <- m[cumsum(table(m[, "Package"])),];
-        };
-        
-        m <- cbind(m, RVer=ver, OS=os);
-        
-        return(m[,c("Package", "RVer", "OS", "Version")]);
-};
-
-pkgfiles <- list.files("bin", pattern="PACKAGES$", recursive = T, full.names = T);
-
-listpkg <- lapply(pkgfiles, f1);
-tbl <- as.data.frame(do.call(rbind, listpkg));
-tbl <- unique(tbl[order(tbl\$Package, tbl\$RVer, tbl\$OS),]);
-
-binTable <-  knitr::kable(tbl, row.names = FALSE);
-print(binTable);
+  binTable <-  knitr::kable(tbl, row.names = FALSE);
+  print(binTable);
 
 
-txt <- paste(paste(srcTable), paste(binTable, collapse = "\n") , sep="\n");
-
-sink("README.md");
-cat("# Stox Project Package Repository\n", sep="\n");
-cat(paste("\nUpdated on:", date()));
-cat("\n## Source Packages\n", sep="\n");
-cat(paste(srcTable), sep="\n");
-cat("\n## Binary Packages\n", sep="\n");
-cat(paste(binTable), sep="\n");
-sink(); 
+  sink("README.md");
+  cat("# Stox Project Package Repository\n", sep="\n");
+  cat(paste("\nUpdated on:", date()));
+  cat("\n## Source Packages\n", sep="\n");
+  cat(paste(srcTable), sep="\n");
+  cat("\n## Binary Packages\n", sep="\n");
+  cat(paste(binTable), sep="\n");
+  sink(); 
 }
 EOF
 )
@@ -81,7 +79,7 @@ addToDrat(){
       Rscript -e "library(drat); insertPackage('./$PKG_FILE', \
         repodir = './drat', \
         commit=FALSE);
-        #drat::updateRepo('./drat')"
+        drat::updateRepo('./drat')"
       cd drat
 
       # Run page generator
