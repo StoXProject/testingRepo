@@ -29,10 +29,12 @@ addToDrat(){
         echo "We have $PKG_REPO"
         
         if [ "${DEPLOY_SRC+x}" = x ]; then
-        Rscript -e "library(drat); insertPackage('$PKG_REPO/drat/$PKG_TARBALL', \
-          repodir = '.', \
-          commit='Repo update $PKG_REPO: build $TRAVIS_BUILD_NUMBER');
-          drat::updateRepo('.')"
+        Rscript -e "install.packages(\"remotes\");
+            remotes::install_github(repo = \"eddelbuettel/drat\", dependencies = FALSE);
+            library(drat);
+            insertPackage('$PKG_REPO/drat/$PKG_TARBALL', repodir = '.', \
+            commit='Repo update $PKG_REPO: build $TRAVIS_BUILD_NUMBER');
+            drat::updateRepo('.')"
         fi
         
         if [ "${TRAVIS_BUILD_NUMBER+x}" = x ]; then
