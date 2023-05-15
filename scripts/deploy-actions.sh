@@ -76,7 +76,7 @@ addToDrat(){
       git fetch upstream
       git checkout -f gh-pages
       cd ..
-      Rscript -e "install.packages('remotes');
+      Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');
         remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);
         library(drat); insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);
         drat::updateRepo('./drat')"
