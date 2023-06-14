@@ -30,11 +30,17 @@ addToDrat(){
         
         if [ "${DEPLOY_SRC+x}" = x ]; then
         Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');
+            message('+++Installed remotes+++');
             remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);
+            message('+++Installed eddelbuettel/drat+++');
             library(drat);
+            message('+++Loaded drat+++');
             insertPackage('$PKG_REPO/drat/$PKG_TARBALL', repodir = '.', \
+            message('+++Ran insertPackage+++');
             commit='Repo update $PKG_REPO: build $TRAVIS_BUILD_NUMBER');
-            drat::updateRepo('.')"
+            message('+++Commited+++');
+            drat::updateRepo('.');
+            message('+++Done+++');"
         fi
         
         if [ "${TRAVIS_BUILD_NUMBER+x}" = x ]; then

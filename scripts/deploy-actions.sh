@@ -77,9 +77,15 @@ addToDrat(){
       git checkout -f gh-pages
       cd ..
       Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');
+        message('___Installed remotes___');
         remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);
-        library(drat); insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);
-        drat::updateRepo('./drat')"
+        message('___Installed eddelbuettel/drat___');
+        library(drat); 
+        message('___Loaded drat___');
+        insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);
+        message('___Ran insertPackage___');
+        drat::updateRepo('./drat');
+        message('___Done___');"
       cd drat
 
       # Run page generator
