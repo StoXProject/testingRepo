@@ -76,20 +76,18 @@ addToDrat(){
       git fetch upstream
       git checkout -f gh-pages
       cd ..
-      Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');
-        message('___Installed remotes___');
-        install.packages('remotes', repos = 'https://cloud.r-project.org')
-        remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);
-        message('___Installed eddelbuettel/drat___');
-        install.packages('remotes', repos = 'https://cloud.r-project.org')
-        library(drat); 
-        message('___Loaded drat___');
-        install.packages('remotes', repos = 'https://cloud.r-project.org')
-        insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);
-        message('___Ran insertPackage___');
-        install.packages('remotes', repos = 'https://cloud.r-project.org')
-        drat::updateRepo('./drat');
-        message('___Done___');"
+      Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');"
+      Rscript -e "message('___Installed remotes___');"
+      Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
+      Rscript -e "message('___Installed eddelbuettel/drat___');"
+      Rscript -e "library(drat);"
+      Rscript -e "message('___Loaded drat___');"
+      Rscript -e "insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);"
+      Rscript -e "message('___Ran insertPackage___');"
+      Rscript -e "drat::updateRepo('./drat');"
+      Rscript -e "message('___Done___');"
+      echo "End Rscript"
+      
       cd drat
 
       # Run page generator
