@@ -78,12 +78,16 @@ addToDrat(){
       cd ..
       Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');
         message('___Installed remotes___');
+        install.packages('remotes', repos = 'https://cloud.r-project.org')
         remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);
         message('___Installed eddelbuettel/drat___');
+        install.packages('remotes', repos = 'https://cloud.r-project.org')
         library(drat); 
         message('___Loaded drat___');
+        install.packages('remotes', repos = 'https://cloud.r-project.org')
         insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);
         message('___Ran insertPackage___');
+        install.packages('remotes', repos = 'https://cloud.r-project.org')
         drat::updateRepo('./drat');
         message('___Done___');"
       cd drat
