@@ -32,7 +32,7 @@ addToDrat(){
         Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');"
         Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
         Rscript -e "library(drat);"
-        Rscript -e "insertPackage('$PKG_REPO/drat/$PKG_TARBALL', repodir = '.', \
+        Rscript -e "drat::insertPackage('$PKG_REPO/drat/$PKG_TARBALL', repodir = '.', \
             commit='Repo update $PKG_REPO: build $TRAVIS_BUILD_NUMBER');"
         Rscript -e "drat::updateRepo('.')"
         fi
@@ -44,7 +44,7 @@ addToDrat(){
         fi
         
         Rscript -e "library(drat);"
-        Rscript -e "insertPackage('$PKG_REPO/drat/$BINSRC', \
+        Rscript -e "drat::insertPackage('$PKG_REPO/drat/$BINSRC', \
             repodir = '.', \
             commit='Repo update $PKG_REPO: build $BUILD_NUMBER');"
         Rscript -e "drat::updateRepo('.')"

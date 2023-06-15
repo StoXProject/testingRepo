@@ -82,7 +82,7 @@ addToDrat(){
       Rscript -e "message('___Installed eddelbuettel/drat___');"
       Rscript -e "library(drat);"
       Rscript -e "message('___Loaded drat___');"
-      Rscript -e "insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);"
+      Rscript -e "drat::insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);"
       Rscript -e "message('___Ran insertPackage___');"
       Rscript -e "drat::updateRepo('./drat');"
       Rscript -e "message('___Done___');"
