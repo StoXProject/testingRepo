@@ -36,4 +36,4 @@ Imports: data.table (>= 1.12.0), Rcpp (>= 1.0.0), stringi (>= 1.4.0),
 LinkingTo: Rcpp
 Suggests: tinytest (>= 1.2.0)
 License: LGPL-3
-MD5sum: 44e937af57d6acda1448bf74081c6998
+MD5sum: dab05d0f9753a59fe4db6fbe8cb2f355
