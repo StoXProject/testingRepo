@@ -70,6 +70,7 @@ addToDrat(){
     git remote add upstream "https://x-access-token:${DRAT_DEPLOY_TOKEN}@github.com/StoXProject/testingRepo.git"
 
     # To prevent race condition, set a loop of adding and pushing file with Drat
+    # Running Rscript with single expressions is required for R 4.3 on Windows, so we do that:
     RET=1
     until [ $RET -eq 0 ]; do
       echo "Begin insert"
@@ -80,6 +81,7 @@ addToDrat(){
       Rscript -e "message('___Installed remotes___');"
       Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
       Rscript -e "message('___Installed eddelbuettel/drat___');"
+      Rscript -e "message('___Package___', './$PKG_FILE');"
       Rscript -e "if(require(drat)) drat::insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);"
       Rscript -e "message('___Ran insertPackage___');"
       Rscript -e "if(require(drat)) drat::updateRepo('./drat');"
