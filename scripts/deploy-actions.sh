@@ -84,7 +84,7 @@ addToDrat(){
       Rscript -e "message('___Package___', './$PKG_FILE');"
       Rscript -e "if(require(drat)) drat::insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);"
       Rscript -e "message('___Ran insertPackage___');"
-      Rscript -e "if(require(drat)) drat::updateRepo('./drat');"
+      #Rscript -e "if(require(drat)) drat::updateRepo('./drat');"
       Rscript -e "message('___Done___');"
       echo "End Rscript"
       
