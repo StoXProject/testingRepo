@@ -79,6 +79,10 @@ addToDrat(){
       cd ..
       Rscript -e "message('___.pkgType___');"
       Rscript -e "print(.Platform);"
+      
+      Rscript -e "message('___DRAT_BINARY_TYPES___');"
+      Rscript -e "print(drat:::DRAT_BINARY_TYPES);"
+      
       Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');message('___TEST___')"
       Rscript -e "message('___Installed remotes___');"
       Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
