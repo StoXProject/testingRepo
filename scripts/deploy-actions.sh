@@ -85,8 +85,8 @@ addToDrat(){
       
       Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');message('___TEST___')"
       Rscript -e "message('___Installed remotes___');"
-      #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
-      Rscript -e "remotes::install_github(repo = 'stoxproject/drat', dependencies = FALSE);"
+      #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE, force = TRUE);"
+      Rscript -e "remotes::install_github(repo = 'stoxproject/drat', dependencies = FALSE, force = TRUE);"
       #Rscript -e "message('___Installed eddelbuettel/drat___');"
       Rscript -e "message('___Installed stoxproject/drat___');"
       Rscript -e "message('___Package___', './$PKG_FILE');"

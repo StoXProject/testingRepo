@@ -31,8 +31,8 @@ addToDrat(){
         # Running Rscript with single expressions is required for R 4.3 on Windows, so we do that:
         if [ "${DEPLOY_SRC+x}" = x ]; then
         Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');"
-        #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
-        Rscript -e "remotes::install_github(repo = 'stoxproject/drat', dependencies = FALSE);"
+        #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE, force = TRUE);"
+        Rscript -e "remotes::install_github(repo = 'stoxproject/drat', dependencies = FALSE, force = TRUE);"
         Rscript -e "if(require(drat)) drat::insertPackage('$PKG_REPO/drat/$PKG_TARBALL', repodir = '.', \
             commit='Repo update $PKG_REPO: build $TRAVIS_BUILD_NUMBER');"
         #Rscript -e "if(require(drat)) drat::updateRepo('.')"
