@@ -81,7 +81,7 @@ addToDrat(){
       #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
       Rscript -e "remotes::install_github(repo = 'stoxproject/drat@OSflavour', dependencies = FALSE);"
       #Rscript -e "message('___Installed eddelbuettel/drat___');"
-      Rscript -e "if(require(drat)) drat::insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);"
+      Rscript -e "if(require(drat)) drat::insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE, OSflavour = R.Version()$platform);"
       Rscript -e "if(require(drat)) drat::updateRepo('./drat');"
       echo "End Rscript"
       
