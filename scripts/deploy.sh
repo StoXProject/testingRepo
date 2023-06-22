@@ -34,7 +34,7 @@ addToDrat(){
         #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE;"
         Rscript -e "remotes::install_github(repo = 'stoxproject/drat@OSflavour', dependencies = FALSE);"
         Rscript -e "if(require(drat)) drat::insertPackage('$PKG_REPO/drat/$PKG_TARBALL', repodir = '.', \
-            commit='Repo update $PKG_REPO: build $TRAVIS_BUILD_NUMBER', OSflavour = R.Version()$platform);"
+            commit='Repo update $PKG_REPO: build $TRAVIS_BUILD_NUMBER', OSflavour = R.Version()[['platform']]);"
         Rscript -e "if(require(drat)) drat::updateRepo('.')"
         fi
         
