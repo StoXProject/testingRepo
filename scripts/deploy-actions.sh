@@ -77,23 +77,12 @@ addToDrat(){
       git fetch upstream
       git checkout -f gh-pages
       cd ..
-      Rscript -e "message('___.pkgType___');"
-      Rscript -e "print(.Platform);"
-      
-      Rscript -e "message('___DRAT_BINARY_TYPES___');"
-      Rscript -e "print(drat:::DRAT_BINARY_TYPES);"
-      
       Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');message('___TEST___')"
-      Rscript -e "message('___Installed remotes___');"
-      #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE, force = TRUE);"
-      Rscript -e "remotes::install_github(repo = 'stoxproject/drat', dependencies = FALSE, force = TRUE);"
+      #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
+      Rscript -e "remotes::install_github(repo = 'stoxproject/drat@OSflavour', dependencies = FALSE);"
       #Rscript -e "message('___Installed eddelbuettel/drat___');"
-      Rscript -e "message('___Installed stoxproject/drat___');"
-      Rscript -e "message('___Package___', './$PKG_FILE');"
       Rscript -e "if(require(drat)) drat::insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE);"
-      Rscript -e "message('___Ran insertPackage___');"
-      #Rscript -e "if(require(drat)) drat::updateRepo('./drat');"
-      Rscript -e "message('___Done___');"
+      Rscript -e "if(require(drat)) drat::updateRepo('./drat');"
       echo "End Rscript"
       
       cd drat
