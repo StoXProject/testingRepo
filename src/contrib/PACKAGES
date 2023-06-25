@@ -76,3 +76,14 @@ Suggests: tinytest (>= 1.2.0)
 License: LGPL-3
 MD5sum: 74416ba0a712f17db8ee15a721ffcf86
 NeedsCompilation: yes
+
+Package: RstoxData
+Version: 1.10.0-9006
+Depends: R (>= 3.6)
+Imports: data.table (>= 1.12.0), Rcpp (>= 1.0.0), stringi (>= 1.4.0),
+        units (>= 0.7), xml2 (>= 1.2.0)
+LinkingTo: Rcpp
+Suggests: tinytest (>= 1.2.0)
+License: LGPL-3
+MD5sum: b4bc27461eff97d417e7e8d01d8470e6
+NeedsCompilation: yes
