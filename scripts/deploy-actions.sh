@@ -77,7 +77,7 @@ addToDrat(){
       git fetch upstream
       git checkout -f gh-pages
       cd ..
-      Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org');message('___TEST___')"
+      Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org')"
       #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
       Rscript -e "remotes::install_github(repo = 'stoxproject/drat@OSflavour', dependencies = FALSE);"
       #Rscript -e "message('___Installed eddelbuettel/drat___');"
