@@ -30,5 +30,4 @@ export FINAL_TAG=$TAG
 export PKG_FILE_PREFIX=${PKGNAME}_${PKGVER}
 export PRERELEASE=$PRERELEASE
 
-
 echo "Final tag is $FINAL_TAG"
