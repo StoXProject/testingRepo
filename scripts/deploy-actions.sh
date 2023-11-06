@@ -56,6 +56,7 @@ EOF
 
 addToDrat(){
 
+  # This codition applies to pre-releases on the unstableRepo and the testingRepo, and to official releases on the repo:
   if [ "${PRERELEASE}" = true ]; then
     
     mkdir drat; cd drat
@@ -66,7 +67,7 @@ addToDrat(){
     git config user.email "stox@hi.no"
     git config --global push.default simple
 
-    ## Get drat repo
+    ## Get drat repo that we are in, so we know where we are (could this step be avoided?):
     git remote add upstream "https://x-access-token:${DRAT_DEPLOY_TOKEN}@github.com/StoXProject/testingRepo.git"
 
     # To prevent race condition, set a loop of adding and pushing file with Drat
@@ -78,10 +79,9 @@ addToDrat(){
       git checkout -f gh-pages
       cd ..
       Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org')"
-      #Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE);"
-      Rscript -e "remotes::install_github(repo = 'stoxproject/drat@OSflavour', dependencies = FALSE);"
-      #Rscript -e "message('___Installed eddelbuettel/drat___');"
-      Rscript -e "if(require(drat)) drat::insertPackage('./$PKG_FILE', repodir = './drat', commit=FALSE, OSflavour = R.Version()[['platform']]);"
+      Rscript -e "remotes::install_github(repo = 'eddelbuettel/drat', dependencies = FALSE)"
+      Rscript -e "if(require(drat)) drat::insertPackage('./$PKG_FILE', repodir = './drat', \
+          commit=FALSE, OSflavour = R.Version()[['platform']]);"
       Rscript -e "if(require(drat)) drat::updateRepo('./drat');"
       echo "End Rscript"
       
