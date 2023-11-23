@@ -133,6 +133,16 @@ Suggests: tinytest (>= 1.2.0), knitr, rmarkdown, httr
 License: LGPL-3
 MD5sum: dd93505202c29f0be91350aefb4d60ff
 
+Package: RstoxData
+Version: 1.10.2-9003
+Depends: R (>= 3.6)
+Imports: data.table (>= 1.12.0), Rcpp (>= 1.0.0), stringi (>= 1.4.0),
+        units (>= 0.7), xml2 (>= 1.2.0)
+LinkingTo: Rcpp
+Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
+License: LGPL-3
+MD5sum: eafc58994a8f62b843318ec1e036a6f0
+
 Package: RstoxFDA
 Version: 1.3.0-9001
 Depends: R (>= 4.0)
