@@ -154,6 +154,18 @@ License: LGPL-3
 MD5sum: 14589f715a2ef6303af1e806a2d9fe63
 NeedsCompilation: no
 
+Package: RstoxBase
+Version: 1.11.4-9011
+Depends: R (>= 3.6)
+Imports: data.table (>= 1.12.0), geojsonsf (>= 2.0.0), ggplot2 (>=
+        3.0.0), jsonlite (>= 1.6), lwgeom (>= 0.2-0), maps (>= 0.2-0),
+        RstoxData (>= 1.10.2-9007), sf (>= 0.9.0), stringi (>= 1.4.0),
+        units (>= 0.7), xml2 (>= 1.2.0)
+Suggests: tinytest (>= 1.2.0)
+License: LGPL-3
+MD5sum: 64783429f09c2f4730da8ce70213c55e
+NeedsCompilation: no
+
 Package: RstoxData
 Version: 1.10.0-9001
 Depends: R (>= 3.6)
