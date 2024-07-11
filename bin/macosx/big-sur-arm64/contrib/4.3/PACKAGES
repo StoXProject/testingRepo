@@ -18,4 +18,4 @@ Imports: data.table (>= 1.12.6), ggplot2 (>= 3.2.1), gridExtra (>=
         1.0.0), stats (>= 3.5.0), utils (>= 3.5.0)
 Suggests: knitr, Reca, rmarkdown, tinytest
 License: LGPL-3
-MD5sum: 6d2459a691bef6a2d1f32a122e67dcaa
+MD5sum: b6d3501972c1499465515a6c8e9d73ff
