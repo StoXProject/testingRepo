@@ -128,6 +128,18 @@ Suggests: knitr, Reca, rmarkdown, tinytest
 License: LGPL-3
 MD5sum: 9f1ee54774498c0e4b21774098e33a87
 
+Package: RstoxFDA
+Version: 1.5.0-9005
+Depends: R (>= 4.3)
+Imports: data.table (>= 1.12.6), ggplot2 (>= 3.2.1), gridExtra (>=
+        2.3), methods (>= 3.5.0), RColorBrewer (>= 1.1-2),
+        rnaturalearth (>= 1.0.1), rnaturalearthdata (>= 1.0.0),
+        RstoxBase (>= 2.1.1), RstoxData (>= 2.1.1), sf (>= 1.0.0),
+        stats (>= 3.5.0), utils (>= 3.5.0)
+Suggests: knitr, Reca, rmarkdown, tinytest
+License: LGPL-3
+MD5sum: ea2bd8f0290054157315b110e014f5a9
+
 Package: RstoxFramework
 Version: 4.0.1-9005
 Depends: R (>= 4.0)
