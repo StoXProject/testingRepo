@@ -860,7 +860,7 @@ Imports: data.table (>= 1.12.6), ggplot2 (>= 3.2.1), gridExtra (>=
         1.0.0)
 Suggests: knitr, rmarkdown, tinytest
 License: LGPL-3
-MD5sum: 6d1815dc3425b6063dfcd9303fa4df70
+MD5sum: 42e61e237ef6687ae5903e9d70400c40
 NeedsCompilation: no
 
 Package: RstoxFramework
