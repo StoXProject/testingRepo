@@ -900,7 +900,7 @@ Imports: data.table (>= 1.12.0), Rcpp (>= 1.0.0), stringi (>= 1.4.0),
 LinkingTo: Rcpp
 Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
 License: LGPL-3
-MD5sum: 43bfc59f75614c4dffd781dfa76639a5
+MD5sum: 6f82da95a15452fc7eef9e782f31a410
 NeedsCompilation: yes
 
 Package: RstoxFDA
