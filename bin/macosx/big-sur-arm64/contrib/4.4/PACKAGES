@@ -360,7 +360,7 @@ Imports: data.table (>= 1.12.0), Rcpp (>= 1.0.0), stringi (>= 1.4.0),
 LinkingTo: Rcpp
 Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
 License: LGPL-3
-MD5sum: dd1ad79256353fba1ebe4e7f531a196d
+MD5sum: a0bf8b1c327a4cf20fd97395fe4fe920
 
 Package: RstoxFDA
 Version: 1.5.0-9002
