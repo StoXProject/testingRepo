@@ -6,5 +6,6 @@ Imports: data.table (>= 1.18.0), Rcpp (>= 1.0.0), stringi (>= 1.4.0),
 LinkingTo: Rcpp
 Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
 License: LGPL-3
-Archs: x64
-Built: R 4.6.0; x86_64-w64-mingw32; 2026-05-05 16:10:20 UTC; windows
+MD5sum: 8df6232062ddfcf5849ffd29da9de729
+Built: R 4.6.0; aarch64-apple-darwin23; 2026-05-05 16:15:51 UTC; unix
+File: RstoxData_2.2.1-9004.tgz

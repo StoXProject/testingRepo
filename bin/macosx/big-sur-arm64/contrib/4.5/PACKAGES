@@ -256,6 +256,7 @@ LinkingTo: Rcpp
 Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
 License: LGPL-3
 MD5sum: 9e75532f07ced0c845abcd7b3ecf5b82
+Built: R 4.5.3; aarch64-apple-darwin20; 2026-05-05 16:16:24 UTC; unix
 
 Package: RstoxFDA
 Version: 1.7.0-9001
