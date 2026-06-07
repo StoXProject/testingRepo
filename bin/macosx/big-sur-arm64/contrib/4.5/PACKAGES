@@ -140,6 +140,7 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
 Suggests: tinytest (>= 1.2.0)
 License: LGPL-3
 MD5sum: 6231db3602dbb9134680ca64359a5c94
+Built: R 4.5.3; ; 2026-06-07 07:19:06 UTC; unix
 
 Package: RstoxData
 Version: 2.1.5-9001
