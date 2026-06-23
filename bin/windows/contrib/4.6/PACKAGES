@@ -7,6 +7,7 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
         units (>= 0.7), xml2 (>= 1.2.0)
 Suggests: tinytest (>= 1.2.0)
 License: LGPL-3
+Built: R 4.6.0; ; 2026-05-07 08:51:29 UTC; windows
 
 Package: RstoxBase
 Version: 2.2.1-9002
@@ -17,6 +18,7 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
         units (>= 0.7), xml2 (>= 1.2.0)
 Suggests: tinytest (>= 1.2.0)
 License: LGPL-3
+Built: R 4.6.0; ; 2026-05-21 20:34:37 UTC; windows
 
 Package: RstoxBase
 Version: 2.2.1-9003
@@ -27,6 +29,7 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
         units (>= 0.7), xml2 (>= 1.2.0)
 Suggests: tinytest (>= 1.2.0)
 License: LGPL-3
+Built: R 4.6.0; ; 2026-05-22 09:27:43 UTC; windows
 
 Package: RstoxBase
 Version: 2.2.1-9004
@@ -37,6 +40,7 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
         units (>= 0.7), xml2 (>= 1.2.0)
 Suggests: tinytest (>= 1.2.0)
 License: LGPL-3
+Built: R 4.6.0; ; 2026-06-07 07:15:41 UTC; windows
 
 Package: RstoxBase
 Version: 2.2.1-9005
@@ -47,6 +51,7 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
         units (>= 0.7), xml2 (>= 1.2.0)
 Suggests: tinytest (>= 1.2.0)
 License: LGPL-3
+Built: R 4.6.0; ; 2026-06-13 11:14:27 UTC; windows
 
 Package: RstoxData
 Version: 2.2.1-9004
@@ -57,6 +62,7 @@ LinkingTo: Rcpp
 Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
 License: LGPL-3
 Archs: x64
+Built: R 4.6.0; x86_64-w64-mingw32; 2026-05-05 18:15:45 UTC; windows
 
 Package: RstoxData
 Version: 2.2.1-9005
@@ -67,6 +73,7 @@ LinkingTo: Rcpp
 Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
 License: LGPL-3
 Archs: x64
+Built: R 4.6.0; x86_64-w64-mingw32; 2026-06-02 11:42:24 UTC; windows
 
 Package: RstoxData
 Version: 2.2.1-9006
@@ -77,6 +84,7 @@ LinkingTo: Rcpp
 Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
 License: LGPL-3
 Archs: x64
+Built: R 4.6.0; x86_64-w64-mingw32; 2026-06-06 21:47:24 UTC; windows
 
 Package: RstoxData
 Version: 2.2.1-9007
@@ -87,6 +95,18 @@ LinkingTo: Rcpp
 Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
 License: LGPL-3
 Archs: x64
+Built: R 4.6.0; x86_64-w64-mingw32; 2026-06-13 08:22:05 UTC; windows
+
+Package: RstoxData
+Version: 2.2.1-9008
+Depends: R (>= 4.5)
+Imports: data.table (>= 1.18.0), Rcpp (>= 1.0.0), stringi (>= 1.4.0),
+        units (>= 0.7), xml2 (>= 1.2.0)
+LinkingTo: Rcpp
+Suggests: httr, knitr, rmarkdown, tinytest (>= 1.2.0)
+License: LGPL-3
+Archs: x64
+Built: R 4.6.0; x86_64-w64-mingw32; 2026-06-23 00:04:33 UTC; windows
 
 Package: RstoxFramework
 Version: 4.2.1-9002
@@ -98,6 +118,7 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
         0.9.0), stringi (>= 1.4.0)
 Suggests: RstoxFDA (>= 1.7.0-9999), tinytest (>= 1.2.0)
 License: LGPL-3
+Built: R 4.6.0; ; 2026-05-09 09:55:05 UTC; windows
 
 Package: RstoxFramework
 Version: 4.2.1-9003
@@ -109,6 +130,7 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
         0.9.0), stringi (>= 1.4.0)
 Suggests: RstoxFDA (>= 1.7.0-9999), tinytest (>= 1.2.0)
 License: LGPL-3
+Built: R 4.6.0; ; 2026-05-22 06:01:38 UTC; windows
 
 Package: RstoxFramework
 Version: 4.2.1-9004
@@ -120,6 +142,7 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
         0.9.0), stringi (>= 1.4.0)
 Suggests: RstoxFDA (>= 1.7.0-9999), tinytest (>= 1.2.0)
 License: LGPL-3
+Built: R 4.6.0; ; 2026-05-22 14:17:07 UTC; windows
 
 Package: RstoxFramework
 Version: 4.2.1-9005
@@ -131,3 +154,4 @@ Imports: data.table (>= 1.18.0), geojsonsf (>= 2.0.0), ggplot2 (>=
         0.9.0), stringi (>= 1.4.0)
 Suggests: RstoxFDA (>= 1.7.0-9999), tinytest (>= 1.2.0)
 License: LGPL-3
+Built: R 4.6.0; ; 2026-06-13 15:07:52 UTC; windows
